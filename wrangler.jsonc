@@ -1,0 +1,13 @@
+{
+  // 店舗サイト配信用 Worker（Cloudflare Workers Builds で main から自動デプロイ）
+  "name": "lp-hp",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
