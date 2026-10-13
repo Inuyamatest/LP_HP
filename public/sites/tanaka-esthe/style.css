@@ -193,7 +193,7 @@ ul, ol { padding: 0; list-style: none; }
 }
 .hero__img {
   position: absolute; inset: 0; z-index: -2;
-  width: 100%; height: 100%; object-fit: cover; object-position: 68% 40%;
+  width: 100%; height: 100%; object-fit: cover; object-position: 86% 40%;
 }
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
@@ -211,6 +211,7 @@ ul, ol { padding: 0; list-style: none; }
 .hero__cta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .hero__cta .btn { padding: 10px 8px; font-size: 13px; letter-spacing: .04em; gap: 8px; }
 .hero__script {
+  display: none;
   position: absolute; right: 18px; top: 96px;
   font-family: var(--f-script); font-size: 38px; line-height: 1.1;
   color: rgba(246, 241, 232, .82); transform: rotate(-8deg);
@@ -441,7 +442,7 @@ ul, ol { padding: 0; list-style: none; }
   .hero__lead { font-size: 15.5px; }
   .hero__cta { display: flex; gap: 12px; }
   .hero__cta .btn { padding: 10px 22px; font-size: 14px; gap: 12px; }
-  .hero__script { top: auto; bottom: 64px; right: 6vw; font-size: 64px; }
+  .hero__script { display: block; top: auto; bottom: 64px; right: 6vw; font-size: 64px; }
 
   .concept { grid-template-columns: 1.15fr 1fr; align-items: stretch; }
   .concept__photo img { height: 100%; aspect-ratio: auto; min-height: 420px; }
