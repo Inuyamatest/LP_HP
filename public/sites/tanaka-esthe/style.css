@@ -273,7 +273,7 @@ ul, ol { padding: 0; list-style: none; }
 /* ---------- FOR YOU ---------- */
 
 .foryou { display: grid; background: var(--kinari); }
-.foryou__photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.foryou__photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 75% 50%; }
 .foryou__text { padding: 36px var(--gutter) 44px; }
 .checks { display: grid; gap: 12px; }
 .checks li { position: relative; padding-left: 32px; font-size: 14.5px; }
