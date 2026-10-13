@@ -398,7 +398,7 @@ h2 .ib, h1 .ib { display: inline-block; }
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  object-position: 60% 40%;
+  object-position: 85% 35%;
 }
 .hearing__panel {
   position: relative;
@@ -847,7 +847,7 @@ h2 .ib, h1 .ib { display: inline-block; }
     padding: 80px 0 120px;
   }
   .hearing__photo { grid-column: 1 / 8; grid-row: 1; }
-  .hearing__photo img { height: 100%; min-height: 560px; aspect-ratio: auto; }
+  .hearing__photo img { height: 100%; min-height: 560px; aspect-ratio: auto; object-position: 60% 30%; }
   .hearing__panel {
     grid-column: 7 / 13;
     grid-row: 1;
