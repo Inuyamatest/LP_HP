@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ほぐし処 ともしび｜仕事帰りの、からだの時間。【デモサイト】</title>
+  <meta name="description" content="夜23時まで営業する、仕事帰りに立ち寄れるもみほぐし処「ともしび」のデモサイトです。店舗名・料金・営業時間などはすべて架空の内容です。">
+  <meta name="theme-color" content="#1b2236">
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="ほぐし処 ともしび（デモ）">
+  <meta property="og:title" content="ほぐし処 ともしび｜仕事帰りの、からだの時間。【デモサイト】">
+  <meta property="og:description" content="夜23時まで。仕事帰りに立ち寄れるもみほぐし処のデモサイトです（内容は架空です）。">
+  <meta property="og:url" content="https://lp.wakuwaku-inc.com/tomoshibi-hogushi/">
+  <meta property="og:image" content="https://lp.wakuwaku-inc.com/tomoshibi-hogushi/images/ogp.jpg">
+  <meta property="og:image:alt" content="灯りの落ちた施術室で、背中のもみほぐしを受けてくつろぐ女性（イメージ）">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b2236'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23e3a75f'/%3E%3C/svg%3E">
+
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+
+  <p class="demo-ribbon" role="note">これはデモサイトです。店舗名・料金・営業時間・写真はすべて架空／イメージです。</p>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="ほぐし処 ともしび トップへ">
+      <span class="brand__dot" aria-hidden="true"></span>
+      <span class="brand__name">ともしび</span>
+      <span class="brand__kind">ほぐし処</span>
+    </a>
+    <nav class="site-nav" aria-label="ページ内">
+      <ul>
+        <li><a href="#evening">夜の過ごし方</a></li>
+        <li><a href="#menu">メニュー</a></li>
+        <li><a href="#room">空間</a></li>
+        <li><a href="#info">店舗情報</a></li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="#reserve">
+      <span class="status" data-status>本日 23:00 まで</span>
+      <span class="header-cta__label">予約する</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <!-- ファーストビュー：文字の帯の下から、横長の写真が現れる -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__type">
+        <p class="hero__clock" aria-hidden="true"><span>19</span><span class="hero__colon">:</span><span>30</span></p>
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title">仕事帰りの、<br>からだの時間。</h1>
+          <p class="hero__lead">夜23時まで。<br class="sp">今日の疲れを、今日のうちにほどく<br class="sp">もみほぐし処です。</p>
+        </div>
+      </div>
+      <div class="ruler" aria-hidden="true">
+        <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
+      </div>
+      <figure class="hero__photo">
+        <img src="images/hero.webp" width="1600" height="900" alt="灯りの落ちた施術室で、背中のもみほぐしを受けて目を閉じる女性（イメージ）" fetchpriority="high">
+      </figure>
+    </section>
+
+    <!-- 時間割：ある平日の夜 -->
+    <section class="evening" id="evening" aria-labelledby="evening-title">
+      <header class="evening__head">
+        <p class="eyebrow">夜の過ごし方</p>
+        <h2 id="evening-title">たとえば、<br>ある平日の夜。</h2>
+        <p class="evening__note">ご来店から帰り道までの、流れの一例です。</p>
+      </header>
+
+      <ol class="timeline">
+        <li class="tl">
+          <p class="tl__time"><time>18:10</time></p>
+          <div class="tl__body">
+            <h3>帰りの電車で、予約する。</h3>
+            <p>当日のご予約も、空きがあればお受けします。仕事が終わる時間が読めない日も、帰り道から。</p>
+          </div>
+          <figure class="tl__photo tl__photo--portrait">
+            <img src="images/time-reserve.webp" width="800" height="600" loading="lazy" alt="ソファでくつろぎながらスマートフォンで予約画面を見る女性（イメージ）">
+          </figure>
+        </li>
+        <li class="tl">
+          <p class="tl__time"><time>19:30</time></p>
+          <div class="tl__body">
+            <h3>着替えて、今日のからだを話す。</h3>
+            <p>どこが重いか、どんな一日だったか。強さの好みもここで伺います。</p>
+          </div>
+          <figure class="tl__photo">
+            <img src="images/time-counseling.webp" width="800" height="600" loading="lazy" alt="温かいお茶を前に、スタッフと話しながら施術の希望を伝える女性（イメージ）">
+          </figure>
+        </li>
+        <li class="tl tl--long">
+          <p class="tl__time"><time>19:40</time><span class="tl__dur">60–120分</span></p>
+          <div class="tl__body">
+            <h3>灯りを落として、ほぐす。</h3>
+            <p>背中、肩、腰、脚。話しかけすぎず、眠ってしまっても大丈夫です。</p>
+          </div>
+          <figure class="tl__photo tl__photo--wide">
+            <img src="images/time-treatment.webp" width="1200" height="900" loading="lazy" alt="キャンドルの灯る部屋で、うつ伏せのまま背中をほぐされる女性（イメージ）">
+          </figure>
+        </li>
+        <li class="tl">
+          <p class="tl__time"><time>21:15</time></p>
+          <div class="tl__body">
+            <h3>お茶を一杯、ゆっくり起きる。</h3>
+            <p>すぐに立ち上がらず、温かいお茶で少し休んでからお帰りください。</p>
+          </div>
+          <figure class="tl__photo">
+            <img src="images/time-after.webp" width="800" height="600" loading="lazy" alt="木のトレーに置かれたハーブティーと焼き菓子（イメージ）">
+          </figure>
+        </li>
+        <li class="tl tl--end">
+          <p class="tl__time"><time>21:30</time></p>
+          <div class="tl__body">
+            <h3>軽くなって、帰り道へ。</h3>
+            <p>あとは帰って眠るだけ。</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- メニュー：時間で選ぶ -->
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="menu__inner">
+        <header class="menu__head">
+          <p class="eyebrow">メニュー</p>
+          <h2 id="menu-title">残っている時間で、<br>選べるように。</h2>
+          <p>バーの長さが施術時間です。料金は税込・デモ用の仮の金額です。</p>
+        </header>
+
+        <div class="price">
+          <h3 class="price__group">ボディもみほぐし</h3>
+          <dl class="price__list">
+            <div class="price__row" style="--min:40">
+              <dt>ボディ 40分</dt><dd class="price__bar" aria-hidden="true"></dd><dd class="price__yen">4,400円</dd>
+            </div>
+            <div class="price__row" style="--min:60">
+              <dt>ボディ 60分</dt><dd class="price__bar" aria-hidden="true"></dd><dd class="price__yen">6,200円</dd>
+            </div>
+            <div class="price__row" style="--min:90">
+              <dt>ボディ 90分</dt><dd class="price__bar" aria-hidden="true"></dd><dd class="price__yen">8,900円</dd>
+            </div>
+            <div class="price__row" style="--min:120">
+              <dt>ボディ 120分</dt><dd class="price__bar" aria-hidden="true"></dd><dd class="price__yen">11,600円</dd>
+            </div>
+          </dl>
+
+          <h3 class="price__group">組み合わせ</h3>
+          <dl class="price__list">
+            <div class="price__row" style="--min:80">
+              <dt>ボディ60分＋足もみ20分</dt><dd class="price__bar" aria-hidden="true"></dd><dd class="price__yen">8,000円</dd>
+            </div>
+            <div class="price__row" style="--min:90">
+              <dt>ボディ60分＋頭・首30分</dt><dd class="price__bar" aria-hidden="true"></dd><dd class="price__yen">9,300円</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="menu__feature" aria-labelledby="head-title">
+          <figure>
+            <img src="images/menu-head.webp" width="1200" height="900" loading="lazy" alt="あおむけで目を閉じ、頭と首をほぐされる女性（イメージ）">
+          </figure>
+          <div>
+            <h3 id="head-title">頭・首だけ、30分。</h3>
+            <p>画面を見続けた日の、目の奥と首まわりに。着替えなしで受けられます。</p>
+            <p class="menu__feature-price"><span>30分</span>3,600円</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- こんな夜に -->
+    <section class="nights" aria-labelledby="nights-title">
+      <h2 class="nights__title" id="nights-title">こんな夜に。</h2>
+      <ul class="nights__list">
+        <li><span class="nights__no">01</span>一日中座りっぱなしで、腰が固まった日。</li>
+        <li><span class="nights__no">02</span>肩が上がったまま、下りてこない日。</li>
+        <li><span class="nights__no">03</span>疲れているのに、すぐには眠れそうにない日。</li>
+      </ul>
+    </section>
+
+    <!-- 空間 -->
+    <section class="room" id="room" aria-labelledby="room-title">
+      <figure class="room__main">
+        <img src="images/room.webp" width="1400" height="1050" loading="lazy" alt="植物と小さな灯りに囲まれた、施術ベッドのある個室（イメージ）">
+      </figure>
+      <div class="room__text">
+        <p class="eyebrow">空間</p>
+        <h2 id="room-title">明るすぎない<br class="pc">部屋で。</h2>
+        <p>照明はやわらかい灯りだけ。外の時間を忘れて、からだのことだけ考えられるように整えています。</p>
+      </div>
+      <figure class="room__sub">
+        <img src="images/entrance.webp" width="1200" height="900" loading="lazy" alt="植物に囲まれ、灯りがともる木の扉の入口（イメージ）">
+        <figcaption>入口（イメージ）</figcaption>
+      </figure>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">よくある質問</h2>
+      <div class="faq__list">
+        <details>
+          <summary>仕事帰りのスーツのままでも大丈夫ですか？</summary>
+          <p>お着替えをご用意しています（デモ用の想定です）。頭・首コースは着替えなしでも受けられます。</p>
+        </details>
+        <details>
+          <summary>当日予約はできますか？</summary>
+          <p>空きがあればお受けします。最終受付は22:00です（デモ用の想定です）。</p>
+        </details>
+        <details>
+          <summary>強さは選べますか？</summary>
+          <p>施術前に好みの強さを伺い、途中でも調整します。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 店舗情報 -->
+    <section class="info" id="info" aria-labelledby="info-title">
+      <div class="info__inner">
+        <h2 id="info-title">ほぐし処 ともしび<span>（デモ）</span></h2>
+        <dl class="info__table">
+          <div><dt>営業時間</dt><dd>14:00 – 23:00<small>最終受付 22:00</small></dd></div>
+          <div><dt>定休日</dt><dd>水曜日</dd></div>
+          <div><dt>住所</dt><dd>デモサイトのため設定していません</dd></div>
+          <div><dt>電話</dt><dd>デモサイトのため設定していません</dd></div>
+          <div><dt>お支払い</dt><dd>確認中</dd></div>
+        </dl>
+        <p class="info__note">掲載内容はデモ用の架空の情報です。実在の店舗ではありません。</p>
+      </div>
+    </section>
+
+    <!-- 締め・予約 -->
+    <section class="closing" id="reserve" aria-labelledby="closing-title">
+      <img class="closing__bg" src="images/closing.webp" width="1600" height="900" loading="lazy" alt="">
+      <div class="closing__inner">
+        <p class="closing__status" data-status>本日 23:00 まで</p>
+        <h2 class="closing__title" id="closing-title">今日の疲れは、<br>今日のうちに。</h2>
+        <p class="closing__demo">デモサイトのため、予約・電話の受付は行っていません。実際の公開時は、ここに予約サイトやLINEへのリンクが入ります。</p>
+        <a class="closing__link" href="#top">ページの先頭へ戻る</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ほぐし処 ともしび（デモサイト）</p>
+    <p><small>写真はすべてイメージです。</small></p>
+  </footer>
+
+  <!-- スマホ用の固定バー：ハンバーガーの代わりに、主要な移動先を下に置く -->
+  <nav class="dock" aria-label="主要な移動先">
+    <a href="#menu">メニュー</a>
+    <a href="#info">店舗情報</a>
+    <a class="dock__cta" href="#reserve"><span class="status" data-status>本日 23:00 まで</span>予約する</a>
+  </nav>
+</body>
+</html>
