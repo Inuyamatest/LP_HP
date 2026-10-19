@@ -18,9 +18,9 @@
   --ink-soft: #4d636a;
   --line: #c9dcd9;
 
-  --f-ja: "Murecho", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
-  --f-en: "Bricolage Grotesque", "Murecho", system-ui, sans-serif;
-  --f-hand: "Klee One", "Murecho", sans-serif;
+  /* 日本語は Web フォントを読み込まず端末の標準ゴシックを使う（読み込み途中の字体の切り替わりを防ぐ） */
+  --f-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "BIZ UDPGothic", "Yu Gothic Medium", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+  --f-en: "Bricolage Grotesque", var(--f-ja);
 
   --header-h: 60px;
   --gutter: 16px;
@@ -115,8 +115,8 @@ address { font-style: normal; }
 .note--light { color: #cfe3e6; }
 
 .hand {
-  font-family: var(--f-hand);
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: .08em;
 }
 
 .tbd {
@@ -198,7 +198,7 @@ address { font-style: normal; }
   min-height: 60px;
   min-width: 13em;
   padding: 14px 28px;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.4;
   letter-spacing: .06em;
@@ -419,7 +419,7 @@ address { font-style: normal; }
 .hero__title {
   margin-top: 16px;
   font-size: clamp(2rem, 9vw, 3.4rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.38;
   letter-spacing: .04em;
   color: var(--ink);
@@ -569,7 +569,7 @@ address { font-style: normal; }
 .kin__head h2,
 .access__info h2 {
   font-size: clamp(1.75rem, 7vw, 2.75rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.45;
   letter-spacing: .04em;
 }
@@ -657,7 +657,7 @@ address { font-style: normal; }
 .ticket__back h3 {
   margin-top: 6px;
   font-size: clamp(1.2rem, 5vw, 1.5rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.5;
 }
 .ticket__back > p:not(.ticket__no):not(.price-stamp) {
@@ -873,7 +873,7 @@ address { font-style: normal; }
 .reserve__inner { max-width: 1080px; margin: 0 auto; }
 .reserve__title {
   font-size: clamp(2rem, 8.4vw, 4rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: .04em;
 }
