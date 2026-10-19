@@ -430,6 +430,14 @@ address { font-style: normal; }
   font-weight: 500;
   color: var(--ink);
 }
+.hero__meaning {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sea-deep);
+}
+.hero__meaning span { font-family: var(--f-en); font-weight: 800; letter-spacing: .04em; margin-right: .2em; }
+.hero__meaning b { font-weight: 700; }
 .hero__copy .stamp-link { margin-top: 26px; }
 .hero__copy .stamp-link--sun .stamp { --stamp-bg: var(--paper); }
 
@@ -498,7 +506,7 @@ address { font-style: normal; }
 .letter__address {
   position: relative;
   margin-top: 30px;
-  padding-top: 92px;
+  padding-top: 122px;
   border-top: 1px dashed var(--line);
 }
 .stamp--deco {
@@ -522,6 +530,23 @@ address { font-style: normal; }
 }
 .postmark--letter { top: 8px; right: 50px; width: 80px; height: 80px; font-size: 11px; }
 .postmark--letter::after { display: none; }
+.letter__to {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: .08em;
+  color: var(--ink-soft);
+}
+.letter__to::before {
+  content: "To";
+  display: block;
+  font-family: var(--f-en);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--coral-deep);
+}
 
 .address-lines div {
   display: grid;
@@ -556,6 +581,7 @@ address { font-style: normal; }
   }
   .stamp--deco { top: 0; }
   .postmark--letter { top: -6px; right: 54px; }
+  .letter__to { top: 0; left: 40px; font-size: 14px; }
 }
 
 /* ---------- 過ごし方 ---------- */
@@ -564,6 +590,7 @@ address { font-style: normal; }
   overflow-x: clip;
 }
 .stay__head { max-width: 1240px; margin: 0 auto 36px; }
+.stay__lead { margin-top: 12px; font-size: 16px; font-weight: 500; line-height: 1.9; }
 .stay__head h2,
 .plan__head h2,
 .kin__head h2,
@@ -600,23 +627,17 @@ address { font-style: normal; }
     margin: 0 auto;
   }
   .scene { width: auto; margin: 0; }
-  .scene--1 { grid-column: 1 / 5; grid-row: 1 / 3; }
-  .scene--2 { grid-column: 6 / 12; grid-row: 1; margin-top: 40px; }
-  .scene--3 { grid-column: 5 / 8; grid-row: 2; margin-top: 56px; margin-left: 0; }
-  .scene--4 { grid-column: 9 / 13; grid-row: 2; margin-top: -24px; margin-right: 0; }
-  .stay__head {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    gap: 0 32px;
-  }
-  .stay__head .eyebrow { grid-column: 1 / -1; justify-self: start; }
-  .stay__head .note { margin-top: 0; text-align: right; }
+  .scene--1 { grid-column: 1 / 5; grid-row: 1; align-self: start; }
+  .scene--2 { grid-column: 6 / 13; grid-row: 1; align-self: start; margin-top: 56px; }
+  .scene--3 { grid-column: 2 / 6; grid-row: 2; align-self: start; margin-top: 36px; margin-left: 0; }
+  .scene--4 { grid-column: 8 / 12; grid-row: 2; align-self: start; margin-top: 24px; margin-right: 0; }
+  .stay__head .note { margin-top: 8px; }
 }
 
 /* ---------- 宿泊プラン ---------- */
 .plan {
   padding: 0 var(--gutter) 88px;
+  overflow-x: clip;
 }
 .plan__head { max-width: 1080px; margin: 0 auto 40px; }
 .plan__head .note { max-width: 40em; }
@@ -641,7 +662,7 @@ address { font-style: normal; }
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
-.ticket:first-child .ticket__photo img { object-position: 30% 50%; }
+.ticket:nth-child(2) .ticket__photo img { object-position: 30% 50%; }
 .ticket__back {
   position: relative;
   padding: 22px 14px 16px;
@@ -676,6 +697,7 @@ address { font-style: normal; }
 }
 .ticket__spec div { display: flex; gap: 10px; }
 .ticket__spec dt { font-weight: 700; color: var(--sea); }
+.ticket__ask { margin-top: 14px; font-size: 14px; }
 
 .price-stamp {
   position: absolute;
@@ -732,7 +754,7 @@ address { font-style: normal; }
     display: grid;
     grid-template-columns: 5fr 6fr;
   }
-  .ticket__photo img { height: 100%; min-height: 300px; }
+  .ticket__photo img { height: 100%; min-height: 260px; }
   .ticket__back {
     padding: 30px 32px 28px;
     border-left: 1px dashed var(--line);
@@ -741,11 +763,12 @@ address { font-style: normal; }
   .ticket__back {
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto auto 1fr auto;
     column-gap: 32px;
-    align-content: start;
   }
   .ticket__back > * { grid-column: 1 / -1; }
+  .ticket__spec { grid-row: 4; align-self: end; margin-top: 20px; }
+  .ticket__ask { grid-row: 5; justify-self: start; }
   .ticket__back .ticket__no { grid-column: 1; grid-row: 1; }
   .ticket__back h3 { grid-column: 1; grid-row: 2; }
   .ticket__back > p:not(.ticket__no):not(.price-stamp) { grid-column: 1; grid-row: 3; }
@@ -767,7 +790,8 @@ address { font-style: normal; }
   margin: 0 auto;
   padding: 48px var(--gutter) 72px;
 }
-.kin__notes { counter-reset: note; margin-top: 8px; }
+.kin__lead { margin-top: 10px; font-weight: 500; color: var(--ink-soft); line-height: 1.9; }
+.kin__notes { counter-reset: note; margin-top: 24px; }
 .kin__notes li {
   counter-increment: note;
   display: grid;
@@ -890,6 +914,33 @@ address { font-style: normal; }
   font-size: 19px;
 }
 .reserve__actions .stamp-link { filter: drop-shadow(0 3px 0 rgba(0, 0, 0, .25)); }
+.reserve__flow {
+  display: grid;
+  gap: 10px;
+  margin: 40px 0 18px;
+  padding: 0;
+  list-style: none;
+}
+.reserve__flow li {
+  display: grid;
+  grid-template-columns: 2.6em 1fr;
+  align-items: baseline;
+  padding: 14px 16px;
+  font-size: 15px;
+  line-height: 1.8;
+  border: 1px dashed rgba(255, 253, 248, .45);
+}
+.reserve__flow b {
+  font-family: var(--f-en);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--sun);
+}
+@media (min-width: 768px) {
+  .reserve__flow { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .reserve__flow li { grid-template-columns: 1fr; align-content: start; padding: 18px 20px 20px; }
+  .reserve__flow b { font-size: 26px; line-height: 1.3; }
+}
 
 @media (min-width: 768px) {
   .reserve { padding: 120px 48px 128px; }
@@ -897,6 +948,8 @@ address { font-style: normal; }
 
 /* ---------- フッター ---------- */
 .site-footer {
+  position: relative;
+  overflow: hidden;
   padding: 40px var(--gutter) 36px;
   font-size: 14px;
   color: #cfe3e6;
@@ -921,10 +974,40 @@ address { font-style: normal; }
   align-items: center;
   min-height: 44px;
 }
+.site-footer__meaning { margin: 4px 0 6px; font-size: 15px; color: var(--paper); }
+.site-footer__nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(207, 227, 230, .35);
+}
+.site-footer__nav a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+.site-footer__nav a:hover, .site-footer__links a:hover { color: var(--sun); }
+.postmark--footer {
+  right: 12px;
+  top: 22px;
+  color: rgba(242, 193, 78, .5);
+}
 .site-footer__copy { margin-top: 12px; }
 @media (min-width: 768px) {
-  .site-footer { padding: 48px; }
-  .site-footer > * { max-width: 1080px; margin-left: auto; margin-right: auto; }
+  .site-footer {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 520px);
+    gap: 0 56px;
+    padding: 64px max(48px, calc((100% - 1080px) / 2)) 48px;
+  }
+  .site-footer__name { font-size: 44px; }
+  .site-footer__nav ul { grid-template-columns: repeat(3, 1fr); margin-top: 0; padding-top: 0; border-top: 0; }
+  .site-footer__links, .site-footer__copy { grid-column: 1 / -1; }
+  .site-footer__links { margin-top: 32px; padding-top: 16px; border-top: 1px dashed rgba(207, 227, 230, .35); }
+  .postmark--footer { top: auto; right: max(48px, calc((100% - 1080px) / 2)); bottom: 28px; }
 }
 
 /* ---------- スマホの追従ボタン（右下の切手1枚） ---------- */

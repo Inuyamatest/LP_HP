@@ -80,7 +80,9 @@
     ['.access__map', 0.15],
     ['.reserve__title', 0],
     ['.reserve__lead', 0.1],
-    ['.reserve__actions li', 0.18]
+    ['.reserve__actions li', 0.18],
+    ['.reserve__flow li', 0.12],
+    ['.site-footer__nav', 0]
   ];
 
   var io = new IntersectionObserver(function (entries) {
