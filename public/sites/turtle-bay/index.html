@@ -24,7 +24,7 @@
   <link rel="preload" as="image" href="images/hero-exterior.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Klee+One:wght@400;600&family=Murecho:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,700..800&display=block">
   <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -71,6 +71,7 @@
           <p class="hero__place">沖縄県国頭郡金武町の宿</p>
           <h1 class="hero__title" id="hero-title">急がない旅を、<br>金武町で。</h1>
           <p class="hero__lead">予定をつめこまない数日のための、<br>タートルベイです。</p>
+          <p class="hero__meaning"><span lang="en">TURTLE BAY</span>は、英語で<b>「亀の入江」</b>。</p>
           <a class="stamp-link stamp-link--sun" href="#reserve">
             <span class="stamp">空室を問い合わせる</span>
           </a>
@@ -102,6 +103,7 @@
         <div class="letter__address">
           <span class="stamp stamp--deco" aria-hidden="true"><span class="stamp__turtle"></span></span>
           <span class="postmark postmark--letter" aria-hidden="true"><span>TURTLE<br>BAY</span></span>
+          <p class="letter__to">急がない旅を<br>さがしている、<br>あなたへ。</p>
           <dl class="address-lines">
             <div><dt>宿名</dt><dd>タートルベイ</dd></div>
             <div><dt>住所</dt><dd>沖縄県国頭郡金武町字金武7948-5</dd></div>
@@ -118,6 +120,7 @@
       <header class="stay__head">
         <p class="eyebrow">過ごし方の一例</p>
         <h2 id="stay-title">なにもしない、<br>をしに来る。</h2>
+        <p class="stay__lead">朝から夜まで、ここでの一日を<br class="sp">四枚の絵はがきにしました。</p>
         <p class="note">写真はイメージです。実際の客室・景色とは異なります。</p>
       </header>
       <ul class="stay__cards">
@@ -160,7 +163,7 @@
         <li class="ticket">
           <article class="ticket__inner" aria-labelledby="plan1-title">
             <figure class="ticket__photo">
-              <img src="images/plan-stay.webp" width="1448" height="1086" loading="lazy" alt="水色のタイル張りの、シャワー・洗面台・トイレのある水まわり（イメージ）">
+              <img src="images/plan-long.webp" width="1400" height="933" loading="lazy" alt="海の見える窓辺の机に置かれたマグカップ、ノート、サングラス（イメージ）">
             </figure>
             <div class="ticket__back">
               <p class="ticket__no" lang="en">PLAN 01</p>
@@ -170,6 +173,7 @@
                 <div><dt>人数</dt><dd>1〜2名</dd></div>
                 <div><dt>食事</dt><dd>なし</dd></div>
               </dl>
+              <a class="ticket__ask text-link" href="https://entry.line.biz/start/jp/" target="_blank" rel="noopener noreferrer">このプランをLINEで相談</a>
               <p class="price-stamp" aria-label="料金 1名 6,000円から（デモ料金）">
                 <span class="stamp"><small>1名</small><b>¥6,000</b><small>〜</small></span>
                 <span class="price-stamp__mark" aria-hidden="true">DEMO</span>
@@ -180,7 +184,7 @@
         <li class="ticket">
           <article class="ticket__inner" aria-labelledby="plan2-title">
             <figure class="ticket__photo">
-              <img src="images/plan-long.webp" width="1400" height="933" loading="lazy" alt="海の見える窓辺の机に置かれたマグカップ、ノート、サングラス（イメージ）">
+              <img src="images/plan-stay.webp" width="1448" height="1086" loading="lazy" alt="水色のタイル張りの、シャワー・洗面台・トイレのある水まわり（イメージ）">
             </figure>
             <div class="ticket__back">
               <p class="ticket__no" lang="en">PLAN 02</p>
@@ -190,6 +194,7 @@
                 <div><dt>人数</dt><dd>1〜2名</dd></div>
                 <div><dt>泊数</dt><dd>3泊から</dd></div>
               </dl>
+              <a class="ticket__ask text-link" href="https://entry.line.biz/start/jp/" target="_blank" rel="noopener noreferrer">このプランをLINEで相談</a>
               <p class="price-stamp" aria-label="料金 1名3泊 16,500円から（デモ料金）">
                 <span class="stamp"><small>1名3泊</small><b>¥16,500</b><small>〜</small></span>
                 <span class="price-stamp__mark" aria-hidden="true">DEMO</span>
@@ -210,6 +215,7 @@
                 <div><dt>人数</dt><dd>3〜4名</dd></div>
                 <div><dt>食事</dt><dd>確認中</dd></div>
               </dl>
+              <a class="ticket__ask text-link" href="https://entry.line.biz/start/jp/" target="_blank" rel="noopener noreferrer">このプランをLINEで相談</a>
               <p class="price-stamp" aria-label="料金 1室 18,000円から（デモ料金）">
                 <span class="stamp"><small>1室</small><b>¥18,000</b><small>〜</small></span>
                 <span class="price-stamp__mark" aria-hidden="true">DEMO</span>
@@ -234,6 +240,7 @@
         <header class="kin__head">
           <p class="eyebrow">まわりのこと</p>
           <h2 id="kin-title">金武町のこと</h2>
+          <p class="kin__lead">宿のまわりの町のことを、<br>すこしだけ。</p>
         </header>
         <ul class="kin__notes">
           <li>沖縄本島の東海岸、金武湾に面した町です。</li>
@@ -282,14 +289,33 @@
             </a>
           </li>
         </ul>
-        <p class="note note--light">オンライン予約ページは確認中です。電話番号・営業時間・定休日も確認中のため、現在の表示は仮のものです。</p>
+        <ol class="reserve__flow" aria-label="ご予約までの流れ">
+          <li><b lang="en">01</b>LINEかお電話で、ご希望の日程と人数をお知らせください。</li>
+          <li><b lang="en">02</b>空室と、合いそうなプラン・料金をご案内します。</li>
+          <li><b lang="en">03</b>内容をご確認いただいたら、ご予約が決まります。</li>
+        </ol>
+        <p class="note note--light">ご予約までの流れは目安で、詳しい手順は確認中です。オンライン予約ページは確認中です。電話番号・営業時間・定休日も確認中のため、現在の表示は仮のものです。</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p class="site-footer__name" lang="en">TURTLE BAY</p>
-    <p>沖縄県国頭郡金武町字金武7948-5</p>
+    <div class="site-footer__brand">
+      <p class="site-footer__name" lang="en">TURTLE BAY</p>
+      <p class="site-footer__meaning">亀の入江から、また便りを。</p>
+      <p>沖縄県国頭郡金武町字金武7948-5</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="フッター">
+      <ul>
+        <li><a href="#about">ごあいさつ</a></li>
+        <li><a href="#stay">過ごし方</a></li>
+        <li><a href="#plan">宿泊プラン</a></li>
+        <li><a href="#kin">金武町のこと</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#reserve">予約・お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <span class="postmark postmark--footer" aria-hidden="true"><span>KIN<br>OKINAWA</span></span>
     <ul class="site-footer__links">
       <li><a href="https://www.instagram.com/?hl=ja" target="_blank" rel="noopener noreferrer">Instagram</a></li>
       <li><a href="https://entry.line.biz/start/jp/" target="_blank" rel="noopener noreferrer">LINE</a></li>
