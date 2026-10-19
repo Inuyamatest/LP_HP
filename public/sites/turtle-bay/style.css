@@ -257,7 +257,7 @@ address { font-style: normal; }
   top: 30%;
   width: 84px;
   height: 36px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 36' fill='none' stroke='%230c4352' stroke-opacity='.6' stroke-width='2'%3E%3Cpath d='M0 6q10.5-6 21 0t21 0 21 0 21 0M0 18q10.5-6 21 0t21 0 21 0 21 0M0 30q10.5-6 21 0t21 0 21 0 21 0'/%3E%3C/svg%3E") no-repeat 0 0 / 100% 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 36' fill='none' stroke='%230c4352' stroke-opacity='.6' stroke-width='2'%3E%3Cpath d='M0 6q10.5-6 21 0t21 0 21 0 21 0M0 18q10.5-6 21 0t21 0 21 0 21 0M0 30q10.5-6 21 0t21 0 21 0 21 0'/%3E%3C/svg%3E") repeat-x 0 0 / 84px 36px;
 }
 
 /* ---------- ヘッダー ---------- */
@@ -968,4 +968,172 @@ address { font-style: normal; }
     animation-duration: .01ms !important;
   }
   .stamp-link:hover { transform: none; }
+}
+
+/* =========================================================
+   モーション：絵はがきを「配る」、切手を「押す」、手紙を「書く」
+   すべて prefers-reduced-motion: no-preference の中だけで動かす。
+   transform は傾き・ホバー用に残し、動きは translate / rotate / scale で重ねる。
+   ========================================================= */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---- ヒーロー：ロゴがせり上がり、はがきが配られ、消印が押される ---- */
+  .hero__wordmark text {
+    animation: tb-rise 1s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .hero__wordmark-sp text:nth-child(2) { animation-delay: .12s; }
+
+  .hero__place,
+  .hero__title,
+  .hero__lead,
+  .hero__copy .stamp-link {
+    animation: tb-fade-up .8s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .hero__place { animation-delay: .35s; }
+  .hero__title { animation-delay: .45s; }
+  .hero__lead { animation-delay: .6s; }
+  .hero__copy .stamp-link { animation: tb-stamp .55s cubic-bezier(.3, 1.4, .5, 1) .85s both; }
+
+  /* 配り終えたら、潮風でゆっくり揺れる */
+  .hero__cards .card {
+    animation:
+      tb-deal 1.1s cubic-bezier(.16, .9, .3, 1) both,
+      tb-sway 7s ease-in-out 2.4s infinite alternate;
+  }
+  .card--a { --from-x: 40vw; --from-y: 30vh; --from-r: 24deg; animation-delay: .5s, 2.4s; }
+  .card--b { --from-x: 55vw; --from-y: 10vh; --from-r: -30deg; animation-delay: .72s, 3.1s; }
+  .card--c { --from-x: -45vw; --from-y: 40vh; --from-r: -22deg; animation-delay: .94s, 2.8s; }
+  .postmark--hero { animation: tb-postmark .5s cubic-bezier(.3, 1.5, .5, 1) 1.75s both; }
+
+  /* 消印の波線は、ゆっくり流れる */
+  .postmark::after { animation: tb-wave 3.2s linear infinite; }
+
+  /* ---- スクロールで現れるもの（JS が .anim / .is-in を付ける） ---- */
+  .js .anim:not(.is-in) { opacity: 0; translate: 0 36px; }
+  .js .anim {
+    transition:
+      opacity .8s ease var(--delay, 0s),
+      translate 1s cubic-bezier(.16, .9, .3, 1) var(--delay, 0s),
+      rotate 1s cubic-bezier(.16, .9, .3, 1) var(--delay, 0s);
+  }
+
+  /* はがきは少し回転しながら、テーブルに置かれるように */
+  .js .scene.anim:not(.is-in) { translate: 0 90px; rotate: var(--drop-r, -7deg); }
+  .js .scene:nth-child(even).anim { --drop-r: 8deg; }
+
+  /* プランのはがきは左右から滑り込む */
+  .js .ticket.anim:not(.is-in) { translate: -60px 30px; rotate: -3deg; }
+  .js .ticket:nth-child(even).anim:not(.is-in) { translate: 60px 30px; rotate: 3deg; }
+
+  /* 切手と DEMO の消印は、はがきが置かれた後にポンと押す */
+  .js .ticket .price-stamp .stamp,
+  .js .ticket .price-stamp__mark,
+  .js .letter__address .stamp--deco,
+  .js .letter__address .postmark--letter { opacity: 0; }
+  .js .ticket.is-in .price-stamp .stamp { animation: tb-stamp .5s cubic-bezier(.3, 1.5, .5, 1) calc(var(--delay, 0s) + .55s) both; }
+  .js .ticket.is-in .price-stamp__mark { animation: tb-postmark .45s cubic-bezier(.3, 1.6, .5, 1) calc(var(--delay, 0s) + .9s) both; }
+  .js .letter__card.is-in .stamp--deco { animation: tb-stamp .5s cubic-bezier(.3, 1.5, .5, 1) .5s both; }
+  .js .letter__card.is-in .postmark--letter { animation: tb-postmark .45s cubic-bezier(.3, 1.6, .5, 1) .85s both; }
+
+  /* ごあいさつの手書き文：1行ずつ、ペンで書くように左から現れる */
+  .js .hand .line {
+    display: inline-block;
+    clip-path: inset(0 100% 0 0);
+  }
+  .js .letter__card.is-in .hand .line {
+    animation: tb-write .9s steps(18, end) var(--line-delay, 0s) forwards;
+  }
+
+  /* 宛名欄の罫線は左から引かれる */
+  .js .address-lines div { background: linear-gradient(var(--line), var(--line)) 0 100% / 0 1px no-repeat; border-bottom-color: transparent; }
+  .js .letter__card.is-in .address-lines div {
+    background-size: 100% 1px;
+    transition: background-size .7s ease var(--row-delay, 0s);
+  }
+
+  /* 金武町のメモは番号から順に */
+  .js .kin__notes li.anim:not(.is-in) { translate: 24px 0; }
+
+  /* 地図のはがきは、最後にそっと置く */
+  .js .access__map.anim:not(.is-in) { translate: 0 60px; rotate: 6deg; }
+
+  /* 予約：エアメールの縁が流れ、切手が順に押される */
+  .reserve::before { animation: tb-airmail 18s linear infinite; }
+  .reserve::after { animation: tb-airmail 18s linear infinite reverse; }
+  .js .reserve__actions li.anim:not(.is-in) { translate: 0 0; scale: 1.5; rotate: -6deg; }
+  .js .reserve__actions li.anim {
+    transition:
+      opacity .3s ease var(--delay, 0s),
+      scale .5s cubic-bezier(.3, 1.5, .5, 1) var(--delay, 0s),
+      rotate .5s cubic-bezier(.3, 1.5, .5, 1) var(--delay, 0s);
+  }
+
+  /* 切手ボタンは、触れるとぷるっと揺れる */
+  @media (hover: hover) {
+    .stamp-link:hover .stamp { animation: tb-wobble .5s ease; }
+  }
+
+  /* 滑り込む・配られる動きで横スクロールが出ないように */
+  .plan, .access, .reserve, .kin { overflow-x: clip; }
+
+  /* スマホの追従切手は、ポンと貼られる */
+  .js .dock.is-visible { animation: tb-stamp .5s cubic-bezier(.3, 1.5, .5, 1) both; }
+
+  /* パノラマの帯は、スクロールに合わせてゆっくり流れる（対応ブラウザのみ） */
+  @supports (animation-timeline: view()) {
+    .kin__band { overflow: hidden; }
+    .kin__band img {
+      scale: 1.12;
+      animation: tb-pan linear both;
+      animation-timeline: view();
+    }
+  }
+}
+
+@keyframes tb-rise {
+  from { opacity: 0; transform: translateY(45%); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes tb-fade-up {
+  from { opacity: 0; translate: 0 18px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes tb-deal {
+  0% { opacity: 0; translate: var(--from-x) var(--from-y); rotate: var(--from-r); }
+  25% { opacity: 1; }
+  100% { opacity: 1; translate: 0 0; rotate: 0deg; }
+}
+@keyframes tb-sway {
+  from { translate: 0 0; rotate: 0deg; }
+  to { translate: 0 -6px; rotate: .8deg; }
+}
+@keyframes tb-stamp {
+  0% { opacity: 0; scale: 1.9; }
+  55% { opacity: 1; scale: .92; }
+  100% { opacity: 1; scale: 1; }
+}
+@keyframes tb-postmark {
+  0% { opacity: 0; scale: 1.7; rotate: 12deg; }
+  60% { opacity: 1; scale: .94; }
+  100% { opacity: 1; scale: 1; rotate: 0deg; }
+}
+@keyframes tb-write {
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes tb-wave {
+  from { background-position: 0 0; }
+  to { background-position: -84px 0; }
+}
+@keyframes tb-airmail {
+  to { background-position: 520px 0; }
+}
+@keyframes tb-wobble {
+  0%, 100% { rotate: 0deg; }
+  25% { rotate: -3deg; }
+  50% { rotate: 2deg; }
+  75% { rotate: -1deg; }
+}
+@keyframes tb-pan {
+  from { translate: 0 -5%; }
+  to { translate: 0 5%; }
 }
