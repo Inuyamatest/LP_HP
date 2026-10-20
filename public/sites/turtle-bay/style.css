@@ -648,7 +648,7 @@ address { font-style: normal; }
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
-.ticket:nth-child(2) .ticket__photo img { object-position: 30% 50%; }
+.ticket:first-child .ticket__photo img { object-position: 60% 45%; }
 .ticket__back {
   position: relative;
   padding: 22px 14px 16px;
